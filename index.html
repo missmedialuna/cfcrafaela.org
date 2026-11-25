@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
@@ -75,7 +76,10 @@
    <div class="card">
     <h3>¿Tenés alguna duda?</h3>
     <p>Escribinos y te respondemos a la brevedad.</p>
-    <a class="btn" data-wa href="#">Contactanos ahora</a>
+  <a class="btn" target="_blank" rel="noopener"
+   href="https://wa.me/5493492621154?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20del%20CFC!">
+  Contactanos ahora!
+</a>
    </div>
   </div>
  </div>
@@ -87,8 +91,8 @@
   <h2>Una iglesia para toda la familia</h2>
   <p>Somos una comunidad donde conviven todas las generaciones. Caminamos juntos, con Jesús en el centro.</p>
   <div class="grid g2" style="margin-top:28px">
-   <div class="card"><h3>Visión</h3><p>Que todas las familias conozcan y sigan a Jesús.</p></div>
-   <div class="card"><h3>Misión</h3><p>Alcanzar a las almas.</p></div>
+   <div class="card"><h3>Visión</h3><p>Amamos con pasión.</p></div>
+   <div class="card"><h3>Misión</h3><p>Que todas las familias conozcan y sigan a Jesús.</p></div>
   </div>
 
   <div class="grid g2" style="margin-top:20px">
@@ -111,7 +115,7 @@
   <div class="grid g3">
    <div class="card">
     <h3>Transferencia bancaria</h3>
-    <p>Alias: <code id="alias">cfcextension</code><button class="btn ghost copy" id="copiar">Copiar</button></p>
+    <p>Alias: <code id="alias">cfc.rafaela.dar</code><button class="btn ghost copy" id="copiar">Copiar</button></p>
     <p id="copiado" aria-live="polite" style="color:var(--leaf);margin:0"></p>
    </div>
    <div class="card">
@@ -141,12 +145,18 @@
 </section>
 
 
-<section id="iglesia" class="alt">
- <div class="wrap">
-  <h2>¡Todos somos iglesia!</h2>
-  <p>Elegí tu grupo y descubrí lo que tenemos para vos.</p>
-  <!-- FOTOS 6 a 15: una por área, en images/areas/ (ver lista en CFG más abajo) -->
-  <div class="grid g4" id="areas"></div>
+<section id="iglesia" class="alt carrusel-sec">
+ <div class="banda">
+  <!-- CARTELITO -->
+  <div class="cartel">
+   <h2>¡Descubrí lo que tenemos para vos!</h2>
+   <p>Deslizá y conocenos!</p>
+  </div> 
+<div class="carrusel">
+  <button class="flecha ant" aria-label="Ver áreas anteriores">‹</button>
+  <div class="pista" id="areas" tabindex="0" role="region" aria-label="Áreas de la iglesia"></div>
+  <button class="flecha sig" aria-label="Ver más áreas">›</button>
+</div>
  </div>
 </section>
 
@@ -162,6 +172,8 @@
    <div class="foto"><span>images/galeria-4.jpg</span><img src="images/galeria-4.jpg" alt="" onerror="this.remove()"></div>
    <div class="foto"><span>images/galeria-5.jpg</span><img src="images/galeria-5.jpg" alt="" onerror="this.remove()"></div>
    <div class="foto"><span>images/galeria-6.jpg</span><img src="images/galeria-6.jpg" alt="" onerror="this.remove()"></div>
+   <div class="foto"><span>images/galeria-7.jpg</span><img src="images/galeria-7.jpg" alt="" onerror="this.remove()"></div>
+   <div class="foto"><span>images/galeria-8.jpg</span><img src="images/galeria-8.jpg" alt="" onerror="this.remove()"></div>
   </div>
  </div>
 </section>
@@ -182,7 +194,10 @@
  <div class="wrap">
   <h2>Grupos de vida</h2>
   <p>Grupos pequeños donde conocés gente, crecés en la fe y te sentís en casa.</p>
-  <a class="btn sun" data-wa href="#">Quiero ser parte de un grupo</a>
+<a class="btn sun" target="_blank" rel="noopener"
+   href="https://wa.me/5493492621154?text=Hola!%20Quiero%20ser%20parte%20de%20un%20grupo%20de%20vida.">
+  ¡Quiero ser parte de un grupo de vida!
+</a>
  </div>
 </section>
 
@@ -190,7 +205,12 @@
 <section id="testimonios">
  <div class="wrap">
   <h2>¡Contanos lo que Dios hizo en tu vida!</h2>
-  <p><a class="btn ghost" data-wa href="#">Compartí tu historia</a></p>
+  <p>
+  <a class="btn ghost" target="_blank" rel="noopener"
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=cfcrafaelaoficina@gmail.com&su=Quiero%20compartir%20mi%20testimonio!">
+    ¡Contanos lo que Dios hizo en tu vida!
+  </a>
+</p>
  </div>
 </section>
 
@@ -199,7 +219,10 @@
  <div class="wrap">
   <h2>Oramos por vos</h2>
   <p>¿Necesitás ayuda o querés que estemos orando por vos?</p>
-  <a class="btn sun" data-gmail href="#">Hablá ahora con nosotros</a>
+<a class="btn sun" target="_blank" rel="noopener"
+   href="https://wa.me/5493492621154?text=Hola!%20Quisiera%20hablar%20con%20ustedes.">
+  Hablá ahora con nosotros
+</a>
  </div>
 </section>
 
@@ -208,7 +231,7 @@
 
 <footer>
  <div class="wrap row">
-  <div><strong>CFC Rafaela</strong><br><span data-mail>cfcrafaelaoficina@gmail.com</span><br><a data-tel </a></div>
+  <div><strong>CFC Rafaela</strong><br><span data-mail>cfcrafaelaoficina@gmail.com</span><br><a data-tel href="tel:5493492621154">+54 9 3492 62-1154</a></div>
   <div class="soc">
     <a data-fb href="#">Facebook</a>
     <a data-yt href="#">YouTube</a>
@@ -216,98 +239,3 @@
   </div>
  </div>
 </footer>
-
-<script>
-
-var CFG = {
-  mail: "cfcrafaelaoficina@gmail.com",
-  dir: "Av. Williner 350, Rafaela, Santa Fe",
-  fb: "https://www.facebook.com/cfcrafaela",
-  yt: "https://www.youtube.com/cfcrafaelaa",
-  ig: "https://www.instagram.com/cfcrafaela",
-  mp: "https://www.mercadopago.com.ar/home/* link de Mercado Pago */",
-  alias: "cfcextension",
-
-  /* d = día de la semana (0 domingo, 1 lunes ... 6 sábado) */
-  horarios: [
-    { d: 0, t: "Domingo 11:00 hs" },
-    { d: 0, t: "Domingo 19:00 hs" },
-    { d: 3, t: "Miércoles 20:00 hs"},
-  ],
-
-
-  areas: [
-    { n: "Músicos",             f: "musicos" },
-    { n: "Multimedia",          f: "multimedia" },
-    { n: "Voluntarios",         f: "voluntarios" },
-    { n: "Niños",               f: "ninos" },
-    { n: "Preadolescentes",     f: "preadolescentes" },
-    { n: "Adolescentes",        f: "adolescentes" },
-    { n: "Jóvenes",             f: "jovenes" },
-    { n: "Mujeres",             f: "mujeres" },
-    { n: "Hombres",             f: "hombres" },
-    { n: "Matrimonios",         f: "matrimonios" },
-    { n: "Hospital",            f: "hospital" },
-    { n: "Escuela de vida",     f: "escuela" },
-    { n: "Academia GEN",        f: "academia" }
-  ]
-};
-
-
-var $ = function (s) { return document.querySelectorAll(s); };
-function each(s, f) { Array.prototype.forEach.call($(s), f); }
-
-each("[data-yt]", function (e) { e.href = CFG.yt; e.target = "_blank"; e.rel = "noopener"; });
-each("[data-fb]", function (e) { e.href = CFG.fb; });
-each("[data-ig]", function (e) { e.href = CFG.ig; });
-each("[data-mp]", function (e) { e.href = CFG.mp; });
-each("[data-mail]", function (e) { e.textContent = CFG.mail; });
-each("[data-dir]", function (e) { e.textContent = CFG.dir; });
-each("[data-mapa]", function (e) { e.href = "https://maps.app.goo.gl/RhWfRZXHQDPdkPFQ6" + encodeURIComponent(CFG.dir); });
-$("#alias")[0].textContent = CFG.alias;
-
-
-var dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
-$("#horarios")[0].innerHTML = CFG.horarios.map(function (h) { return "<li>" + h.t + "</li>"; }).join("");
-(function () {
-  var now = new Date(), best = null;
-  CFG.horarios.forEach(function (h) {
-    var m = h.t.match(/(\d{1,2}):(\d{2})/);
-    if (!m) return;
-    var d = new Date(now);
-    d.setHours(+m[1], +m[2], 0, 0);
-    d.setDate(d.getDate() + ((h.d - now.getDay() + 7) % 7));
-    if (d < now) d.setDate(d.getDate() + 7);
-    if (!best || d < best) best = d;
-  });
-  if (best) {
-    var hoy = best.toDateString() === now.toDateString();
-    $("#proxima")[0].textContent = "Próxima reunión: " + (hoy ? "hoy" : dias[best.getDay()] + " " + best.getDate()) +
-      " a las " + best.toLocaleTimeString("es-AR", { hour: "2-digit", minute: "2-digit" }) + " hs";
-  }
-})();
-
-
-var col = ["#0f2a43", "#2e7d6b", "#7a4e9c", "#b5462f", "#1f6f9c", "#8a6a12", "#3d5a80", "#a23b72", "#2a7f62", "#5c4b8a"];
-$("#areas")[0].innerHTML = CFG.areas.map(function (m, i) {
-  return '<a class="tile" href="#" style="background:' + col[i % col.length] + '">' +
-    '<img src="images/areas/' + m.f + '.jpg" alt="" onerror="this.remove()">' +
-    '<span><small>Área</small><br>' + m.n + '</span></a>';
-}).join("");
-
-
-$("#copiar")[0].onclick = function () {
-  var ok = function () { $("#copiado")[0].textContent = "Alias copiado"; };
-  var manual = function () { $("#copiado")[0].textContent = "Copia manual: " + CFG.cfcextension; };
-  try { navigator.clipboard.writeText(CFG.cfcextension).then(ok, manual); } catch (e) { manual(); }
-};
-
-
-var b = $("#burger")[0], m = $("#menu")[0];
-b.onclick = function () { var o = m.classList.toggle("open"); b.setAttribute("aria-expanded", o); };
-each("nav a", function (a) {
-  a.addEventListener("click", function () { m.classList.remove("open"); b.setAttribute("aria-expanded", "false"); });
-});
-</script>
-</body>
-</html>

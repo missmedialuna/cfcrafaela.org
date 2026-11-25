@@ -1,20 +1,29 @@
+/* =====================================================
+   CFC RAFAELA - ESTILOS
+   ===================================================== */
+
+
+/* -----------------------------------------------------
+   1. COLORES
+   ----------------------------------------------------- */
 :root {
-  --bg: #f6f9fb;
-  --card: #ffffff;
-  --ink: #0f2a43;
-  --mute: #4d6479;
-  --line: #d7e2ea;
-  --brand: #0f2a43;
-  --on-brand: #ffffff;
-  --sun: #f5b83d;
-  --leaf: #2e7d6b;
+  --bg: #f6f9fb;          /* fondo general */
+  --card: #ffffff;        /* fondo de tarjetas */
+  --ink: #0f2a43;         /* texto principal */
+  --mute: #4d6479;        /* texto secundario */
+  --line: #d7e2ea;        /* bordes y líneas */
+  --brand: #0f2a43;       /* color principal (botones) */
+  --on-brand: #ffffff;    /* texto sobre el color principal */
+  --sun: #f5b83d;         /* color de acento (amarillo) */
+  --leaf: #2e7d6b;        /* verde (barras y avisos) */
+  --azul: #0f2a43;        /* azul del cartel del carrusel (no cambia en modo oscuro) */
 
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-
+/* Modo oscuro automático */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0b1b2b;
@@ -37,6 +46,10 @@
   --on-brand: #0b1b2b;
 }
 
+
+/* -----------------------------------------------------
+   2. BASE
+   ----------------------------------------------------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
@@ -103,6 +116,9 @@ section {
 }
 
 
+/* -----------------------------------------------------
+   3. BOTONES
+   ----------------------------------------------------- */
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -117,7 +133,7 @@ section {
   cursor: pointer;
 }
 
-
+/* Botón amarillo */
 .btn.sun {
   background: var(--sun);
   border-color: var(--sun);
@@ -131,6 +147,9 @@ section {
 }
 
 
+/* -----------------------------------------------------
+   4. MENÚ SUPERIOR
+   ----------------------------------------------------- */
 header {
   position: sticky;
   top: 0;
@@ -147,7 +166,7 @@ header {
   gap: 16px;
 }
 
-
+/* Logo (cuando lo tenga) */
 .logo {
   font: 800 1.4rem "Bricolage Grotesque", sans-serif;
   text-decoration: none;
@@ -191,7 +210,7 @@ nav a:hover {
   white-space: nowrap;
 }
 
-
+/* Botón de menú del celular */
 #burger {
   display: none;
   background: none;
@@ -203,7 +222,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-
+/* Menú en pantallas chicas */
 @media (max-width: 900px) {
   #burger {
     display: block;
@@ -235,13 +254,16 @@ nav a:hover {
 }
 
 
+/* -----------------------------------------------------
+   5. FOTOS
+   ----------------------------------------------------- */
 .foto {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   border: 2px dashed var(--line);
   background: var(--card);
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3;             /* proporción de la foto */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,7 +281,7 @@ nav a:hover {
   object-fit: cover;
 }
 
-
+/* Proporciones alternativas */
 .foto.ancha {
   aspect-ratio: 16 / 9;
 }
@@ -273,7 +295,9 @@ nav a:hover {
 }
 
 
-
+/* -----------------------------------------------------
+   6. PORTADA (INICIO)
+   ----------------------------------------------------- */
 .hero {
   padding: 88px 0 72px;
   background: linear-gradient(180deg, var(--card), var(--bg));
@@ -299,7 +323,7 @@ nav a:hover {
   align-items: center;
 }
 
-
+/* Puntito verde del botón "en línea" */
 .dot {
   display: inline-block;
   width: 10px;
@@ -310,29 +334,25 @@ nav a:hover {
 }
 
 
+/* -----------------------------------------------------
+   7. GRILLAS Y TARJETAS
+   ----------------------------------------------------- */
 .grid {
   display: grid;
   gap: 20px;
 }
- 
+
 .g2 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
- 
+
 .g3 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
- 
+
 .g4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
- 
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 24px;
-}
 
 .card {
   background: var(--card);
@@ -341,13 +361,13 @@ nav a:hover {
   padding: 24px;
 }
 
-
+/* Sección con fondo diferente */
 .alt {
   background: var(--card);
   border-block: 1px solid var(--line);
 }
 
-
+/* Sección con fondo oscuro (GVs) */
 .dark {
   background: var(--brand);
   color: var(--on-brand);
@@ -359,7 +379,9 @@ nav a:hover {
 }
 
 
-
+/* -----------------------------------------------------
+   8. REUNIONES
+   ----------------------------------------------------- */
 .times {
   margin: 0;
   padding: 0;
@@ -371,7 +393,7 @@ nav a:hover {
   list-style: none;
 }
 
-
+/* Cartel de "próxima reunión" */
 .next {
   margin-top: 16px;
   padding: 12px 16px;
@@ -380,6 +402,9 @@ nav a:hover {
 }
 
 
+/* -----------------------------------------------------
+   9. DAR EN LÍNEA
+   ----------------------------------------------------- */
 code {
   padding: 2px 8px;
   border-radius: 6px;
@@ -393,14 +418,10 @@ code {
 }
 
 
-.bar-in {
-  height: 100%;
-  width: 0;
-  background: var(--leaf);
-  transition: width 1s ease;
-}
 
-
+/* -----------------------------------------------------
+   10. ÁREAS
+   ----------------------------------------------------- */
 .tile {
   position: relative;
   overflow: hidden;
@@ -420,7 +441,7 @@ code {
   opacity: 0.85;
 }
 
-
+/* Foto de fondo del área */
 .tile img {
   position: absolute;
   inset: 0;
@@ -429,7 +450,7 @@ code {
   object-fit: cover;
 }
 
-
+/* Oscurece la foto pa que se lea el texto */
 .tile::after {
   content: "";
   position: absolute;
@@ -443,6 +464,140 @@ code {
 }
 
 
+/* -----------------------------------------------------
+   11. CARRUSEL DE ÁREAS
+   ----------------------------------------------------- */
+section.carrusel-sec {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Banda */
+.banda {
+  --margen: max(20px, calc((100vw - 1080px) / 2 + 20px));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 48px 0;
+  background: linear-gradient(
+    90deg,
+    var(--azul) 0,
+    var(--azul) calc(var(--margen) + 300px),
+    transparent 100%
+  );
+}
+
+/* Cartel con el texto */
+.cartel {
+  flex: 0 0 calc(var(--margen) + 280px);
+  padding-left: var(--margen);
+  color: #ffffff;
+}
+
+.cartel h2 {
+  color: #ffffff;
+  margin-bottom: 0.4em;
+}
+
+.cartel p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Carrusel: arranca justo donde termina el cartel */
+.carrusel {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.pista {
+  display: flex;
+  gap: 16px;
+  padding: 8px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  cursor: default;
+}
+
+.pista::-webkit-scrollbar {
+  display: none;
+}
+
+.pista.arrastrando {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+
+.pista img {
+  -webkit-user-drag: none;
+}
+
+/* Tamaño de cada foto del carrusel */
+.pista .tile {
+  flex: 0 0 220px;
+  min-height: 300px;
+  scroll-snap-align: start;
+  cursor: default;
+}
+
+/* Flechitas solo en computadora */
+.flecha {
+  position: absolute;
+  top: 50%;
+  z-index: 2;     
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.flecha.ant {
+  left: 8px;
+}
+
+.flecha.sig {
+  right: 8px;
+}
+
+@media (hover: none) {
+  .flecha {
+    display: none;
+  }
+}
+
+/* En el celular: el cartel arriba y el carrusel abajo */
+@media (max-width: 760px) {
+  .banda {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 32px 0;
+    background: linear-gradient(90deg, var(--azul) 0, var(--azul) 60%, transparent 100%);
+  }
+
+  .cartel {
+    flex: none;
+    max-width: 320px;
+    padding-right: 20px;
+  }
+}
+
+
+/* -----------------------------------------------------
+   12. GALERÍA DE FOTOS
+   ----------------------------------------------------- */
 .galeria {
   display: grid;
   gap: 12px;
@@ -450,6 +605,9 @@ code {
 }
 
 
+/* -----------------------------------------------------
+   13. PREGUNTAS FRECUENTES
+   ----------------------------------------------------- */
 details {
   background: var(--card);
   border: 1px solid var(--line);
@@ -471,6 +629,9 @@ details p {
 }
 
 
+/* -----------------------------------------------------
+   14. PIE DE PÁGINA Y BOTÓN DE WHATSAPP
+   ----------------------------------------------------- */
 footer {
   padding: 40px 0;
   border-top: 1px solid var(--line);
@@ -490,7 +651,7 @@ footer .row {
   gap: 16px;
 }
 
-
+/* Botón flotante de contacto */
 .wa {
   position: fixed;
   right: 16px;
@@ -498,14 +659,22 @@ footer .row {
   z-index: 20;
   padding: 12px 18px;
   border-radius: 999px;
-  background: #25a35a;
-  color: #ffffff;
+  background: var(--brand);
+  color: var(--on-brand);
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
+#oracion {
+  background: var(--azul);
+  color: #ffffff;
+  border-block: none;
+}
 
+/* -----------------------------------------------------
+   15. ACCESIBILIDAD
+   ----------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
