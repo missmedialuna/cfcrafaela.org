@@ -88,7 +88,7 @@ const iniciarCarrusel = () => {
     return;
   }
 
-  /* Tarjetas: una por área de datos.js */
+  /* Tarjetas */
   pista.innerHTML = AREAS.map((a, i) => `
     <div class="tile" style="background:${colores[i % colores.length]}">
       <img src="images/areas/${a.f}.jpg" alt="" draggable="false" onerror="this.remove()">
